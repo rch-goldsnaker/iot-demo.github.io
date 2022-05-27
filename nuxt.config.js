@@ -21,7 +21,8 @@ export default {
     }
   },
   router: {
-    linkExactActiveClass: 'active'
+    linkExactActiveClass: 'active',
+    base: '/iot-demo.github.io/'
   },
   /*
   ** Customize the progress-bar color
@@ -70,14 +71,6 @@ export default {
    demo_version: process.env.DEMO_VERSION
   },
 
-  server: {
-    port: 3000, // default: 3000
-    host: '0.0.0.0', // default: localhost
-  },
-
-  serverMiddleware: {
-    '/api': '~/api'
-  },
 
   /*
   ** Build configuration
