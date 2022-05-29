@@ -145,6 +145,7 @@
             this.getNow();
             this.updateColorClass();
             this.getChartType();
+            this.getChartData();
 
         },
         beforeDestroy() {
@@ -176,7 +177,7 @@
 
             getChartData() {
 
-                if (this.config.demo) {
+                if (true) {
                     this.chartOptions.series[0].data = [[1606659071668, 22], [1606659072668, 27], [1606659073668, 32], [1606659074668, 7]];
                     this.isMounted = true;
                     return;

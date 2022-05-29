@@ -74,6 +74,14 @@ export default {
    demo_version: process.env.DEMO_VERSION
   },
 
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
+
+  serverMiddleware: {
+    '/api': '~/api'
+  },
 
   /*
   ** Build configuration
@@ -83,12 +91,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend(config) {
-      config.module.rules.push({
-        test: /\.mjs$/,
-        include: /node_modules/,
-        type: "javascript/auto"
-      });
+    extend(config, ctx) {
     },
     babel: {
       plugins: [
