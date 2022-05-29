@@ -74,14 +74,14 @@ export default {
    demo_version: process.env.DEMO_VERSION
   },
 
-  server: {
-    port: 3000, // default: 3000
-    host: '0.0.0.0', // default: localhost
-  },
+  // server: {
+  //   port: 3000, // default: 3000
+  //   host: '0.0.0.0', // default: localhost
+  // },
 
-  serverMiddleware: {
-    '/api': '~/api'
-  },
+  // serverMiddleware: {
+  //   '/api': '~/api'
+  // },
 
   /*
   ** Build configuration
