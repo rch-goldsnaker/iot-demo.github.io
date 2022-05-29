@@ -20,9 +20,12 @@ export default {
       class: '' // Add `white-content` class here to enable "white" mode.
     }
   },
+  generate: {
+    dir: 'IoTdemo.github.io'
+  },
   router: {
     linkExactActiveClass: 'active',
-    base: '/iot-demo.github.io/'
+    base: '/IoTdemo.github.io/'
   },
   /*
   ** Customize the progress-bar color
