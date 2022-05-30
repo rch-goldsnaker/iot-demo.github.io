@@ -16,6 +16,7 @@
       <Rtnumberchart
         v-if="widget.widget == 'numberchart'"
         :config="fixWidget(widget)"
+        :test="100"
       ></Rtnumberchart>
 
       <Iotswitch
@@ -52,27 +53,26 @@ export default {
   name: 'Dashboard',
   data() {
     return {
-
-
-  
-  widgets : [
+      widgets : [
   {
     "userId": "sampleuserid",
     "selectedDevice": {
       "name": "Home",
       "dId": "8888"
     },
-    "variableFullName": "temperature",
+    "variableFullName": "Heat Index",
     "typeChart": "areaspline",
-    "variable": "iFKrw99Mmf",
+    "variable": "IUnSGcDjRj",
     "variableType": "input",
-    "variableSendFreq": "30",
-    "unit": "Watts",
+    "variableSendFreq": 30,
+    "unit": "°C",
     "class": "success",
     "column": "col-12",
     "decimalPlaces": 2,
     "widget": "numberchart",
-    "icon": "fa-sun",
+    "setValue":15,
+    "testTime":1606659071000,
+    "icon": "fa-thermometer-full",
     "chartTimeAgo": 60,
     "demo": true
   },
@@ -82,17 +82,19 @@ export default {
       "name": "Home",
       "dId": "8888"
     },
-    "variableFullName": "temperature",
+    "variableFullName": "Temperature",
     "typeChart": "areaspline",
-    "variable": "idadm8eYhh",
+    "variable": "TjXSiiKr6m",
     "variableType": "input",
-    "variableSendFreq": "30",
-    "unit": "Watts",
-    "class": "success",
+    "variableSendFreq": 30,
+    "unit": "°C",
+    "class": "warning",
     "column": "col-lg-4",
     "decimalPlaces": 2,
     "widget": "numberchart",
-    "icon": "fa-sun",
+    "setValue":12,
+    "testTime":1606659071000,
+    "icon": "fa-thermometer",
     "chartTimeAgo": 60,
     "demo": true
   },
@@ -102,17 +104,19 @@ export default {
       "name": "Home",
       "dId": "8888"
     },
-    "variableFullName": "temperature",
+    "variableFullName": "Humidity",
     "typeChart": "areaspline",
-    "variable": "jiMoDe1Bja",
+    "variable": "R7Ypbaoy4C",
     "variableType": "input",
-    "variableSendFreq": "30",
-    "unit": "Watts",
-    "class": "success",
+    "variableSendFreq": 30,
+    "unit": "%",
+    "class": "primary",
     "column": "col-lg-4",
     "decimalPlaces": 2,
     "widget": "numberchart",
-    "icon": "fa-sun",
+    "setValue":40,
+    "testTime":1606659071000,
+    "icon": "fa-tint",
     "chartTimeAgo": 60,
     "demo": true
   },
@@ -123,11 +127,12 @@ export default {
       "dId": "8888"
     },
     "variableFullName": "EspCam32",
-    "variable": "b1Kau1br5p",
+    "variable": "kDAfTIMyHT",
     "variableType": "input",
     "widget": "espCam",
     "icon": "fa-camera",
-    "column": "col-lg-4"
+    "column": "col-lg-4",
+    "class": "danger"
   },
   {
     "userId": "userid",
@@ -138,14 +143,15 @@ export default {
       "templateId": "984237562348756ldksjfh",
       "saverRule": false
     },
-    "variableFullName": "Pump",
-    "variable": "uKEXktxzIE",
+    "variableFullName": "Led ON",
+    "variable": "j6iWecYDYx",
     "variableType": "output",
     "icon": "fa-lightbulb",
     "column": "col-lg-6",
     "widget": "button",
-    "class": "danger",
-    "message": "{'fanstatus': 'stop'}"
+    "class": "success",
+    "message": "true",
+    "text": "ON"
   },
   {
     "userId": "userid",
@@ -156,14 +162,15 @@ export default {
       "templateId": "984237562348756ldksjfh",
       "saverRule": false
     },
-    "variableFullName": "Pump",
-    "variable": "vu2UyNRind",
+    "variableFullName": "Led OFF",
+    "variable": "CCNLjHe1aI",
     "variableType": "output",
     "icon": "fa-lightbulb",
     "column": "col-lg-6",
     "widget": "button",
     "class": "danger",
-    "message": "{'fanstatus': 'stop'}"
+    "message": "true",
+    "text": "OFF"
   }
 ]
     } 

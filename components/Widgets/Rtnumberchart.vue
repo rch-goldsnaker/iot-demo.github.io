@@ -9,7 +9,7 @@
             <h5 class="card-category pull-right">{{getTimeAgo((nowTime - time) / 1000)}} ago </h5>
 
           
-            <h5 class="card-category">{{ config.selectedDevice.name }} - {{ config.variableFullName }}</h5>
+            <h5 class="card-category">{{ config.selectedDevice.name }} Device 1- {{ config.variableFullName }}</h5>
 
             <h3 class="card-title">
                 <i class="fa " :class="[config.icon, getIconColorClass()]" aria-hidden="true"
@@ -41,6 +41,9 @@
                 nowTime: Date.now(),
                 isMounted: false,
                 topic: "",
+                store:[],
+                lastTime:0,
+                randonValue:0,
 
                 chartOptions: {
                     credits: {
@@ -146,6 +149,8 @@
             this.updateColorClass();
             this.getChartType();
             this.getChartData();
+            this.startCount();
+            this.lastTime = this.config.testTime;
 
         },
         beforeDestroy() {
@@ -175,12 +180,24 @@
 
             },
 
+            startCount(){
+                setTimeout(() => {
+                    this.lastTime = this.lastTime + 1000;
+                    this.randonValue = this.config.setValue + (Math.floor(Math.random() * 10))/10;
+                    this.store.push([this.lastTime,this.randonValue]);
+                    //console.log("random" + this.randonValue)
+                    this.value = this.randonValue;
+                    this.startCount();
+                }, 3000);
+            },
+
             getChartData() {
 
                 if (true) {
-                    this.chartOptions.series[0].data = [[1606659071668, 22], [1606659072668, 27], [1606659073668, 32], [1606659074668, 7]];
+                    this.store = [[1606659067000, 22], [1606659068000, 27], [1606659069000, 32], [1606659070000, 33]]
+                    this.chartOptions.series[0].data = this.store;
                     this.isMounted = true;
-                    return;
+                return;
                 }
 
  

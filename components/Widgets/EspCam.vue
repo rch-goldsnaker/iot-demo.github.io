@@ -7,7 +7,7 @@
             <h5 class="card-category pull-right">{{getTimeAgo((nowTime - time) / 1000)}} ago </h5>
 
           
-            <h5 class="card-category">{{ config.selectedDevice.name }} - {{ config.variableFullName }}</h5>
+            <h5 class="card-category">{{ config.selectedDevice.name }} Device 2- {{ config.variableFullName }}</h5>
 
             <h3 class="card-title">
                 <i class="fa " :class="[config.icon, getIconColorClass()]" aria-hidden="true"
