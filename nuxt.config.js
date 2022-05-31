@@ -21,11 +21,11 @@ export default {
     }
   },
   generate: {
-    dir: 'IoTdemo.github.io'
+    dir: 'docs'
   },
   router: {
     linkExactActiveClass: 'active',
-    base: '/IoTdemo.github.io/'
+    base: '/docs/'
   },
   /*
   ** Customize the progress-bar color
