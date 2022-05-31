@@ -2,7 +2,7 @@
   <card>
     <div slot="header">
       <h4 class="card-title">
-        {{ config.selectedDevice.name }} - {{ config.variableFullName }}
+        {{ config.selectedDevice.name }} Device 3 - {{ config.variableFullName }}
       </h4>
     </div>
 
@@ -31,6 +31,9 @@ export default {
   methods: {
 
     sendValue() {
+
+        $nuxt.$emit('messageLedButton', this.config.message);
+        return;
 
         this.sending = true;
 

@@ -17,7 +17,7 @@
         </template>
 
         <div class="img-area">
-            <img :src="img" height="100%" width= "450px">
+            <img :src="img" height="100%" width= "380">
         </div>
 
     </card>
@@ -36,12 +36,15 @@
                 nowTime: Date.now(),
                 isMounted: false,
                 topic: "",
-                img:"",
+                img:"img/LedOff.jpeg",
                 wsHost : process.env.ws_host,
                 wsPort : process.env.ws_port
             };
         },
         mounted(){
+
+            this.$nuxt.$on("messageLedButton", this.ledFunction );
+
             this.getNow();
 
             const WS_URL = `ws:///${this.wsHost}:${this.wsPort}`;
@@ -57,6 +60,14 @@
             }
         },
         methods: {
+
+            ledFunction(index){
+                if(index == "true"){
+                    this.img = "img/LedOn.jpeg";
+                }else if(index == "false"){
+                    this.img = "img/LedOff.jpeg";
+                }
+            },
 
             getNow() {
                 this.nowTime = Date.now();

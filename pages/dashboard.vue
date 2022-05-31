@@ -169,7 +169,7 @@ export default {
     "column": "col-lg-6",
     "widget": "button",
     "class": "danger",
-    "message": "true",
+    "message": "false",
     "text": "OFF"
   }
 ]
