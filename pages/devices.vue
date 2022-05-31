@@ -163,8 +163,7 @@ export default {
     };
   },
   mounted() {
-    
-    this.getTemplates();
+    //this.getTemplates();
   },
   methods: {
     updateSaverRuleStatus(rule) {
