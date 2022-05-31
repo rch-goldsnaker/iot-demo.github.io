@@ -25,7 +25,7 @@ export default {
   },
   router: {
     linkExactActiveClass: 'active',
-    base: '/IoTdemo.github.io/'
+    base: '/iot-demo.github.io/'
   },
   /*
   ** Customize the progress-bar color
